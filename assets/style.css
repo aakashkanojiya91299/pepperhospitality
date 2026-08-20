@@ -596,6 +596,11 @@ a:hover { color: var(--accent-dark); }
   transition: background 250ms ease, color 250ms ease, border-color 250ms ease;
 }
 
+.chip:hover:not(.active) {
+  border-color: var(--text);
+  color: var(--text);
+}
+
 .chip.active {
   background: var(--dark);
   color: var(--bg);
