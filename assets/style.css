@@ -107,7 +107,7 @@ a:hover { color: var(--accent-dark); }
 }
 
 .nav-right a { color: var(--text-muted); }
-.nav-right a:hover { color: var(--accent); }
+.nav-right a:hover:not(.btn-enquire) { color: var(--accent); }
 
 .btn-enquire {
   padding: 11px 24px;
