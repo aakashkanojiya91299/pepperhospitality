@@ -2,7 +2,7 @@
   "use strict";
 
   var CONFIG = {
-    formAction: "https://formspree.io/f/your-form-id"
+    enquiryEmail: "info@pepperhospitality.in"
   };
 
   // ---------- Focus / Services tabs ----------
@@ -103,14 +103,33 @@
     });
 
     form.addEventListener("submit", function (e) {
-      if (!CONFIG.formAction || CONFIG.formAction.indexOf("your-form-id") > -1) {
-        e.preventDefault();
-        if (sentMessage) sentMessage.classList.add("visible");
-        form.reset();
-        chips.forEach(function (chip) { chip.classList.remove("active"); });
-        picked = [];
-        syncInterests();
-      }
+      e.preventDefault();
+
+      var name = form.querySelector('[name="name"]').value.trim();
+      var email = form.querySelector('[name="email"]').value.trim();
+      var phone = form.querySelector('[name="phone"]').value.trim();
+      var message = form.querySelector('[name="message"]').value.trim();
+
+      var subject = "New enquiry" + (name ? " from " + name : "");
+      var body = [
+        "Name: " + (name || "—"),
+        "Email: " + (email || "—"),
+        "Phone: " + (phone || "—"),
+        "Interested in: " + (interestsInput.value || "—"),
+        "",
+        "Message:",
+        message || "—"
+      ].join("\n");
+
+      window.location.href = "mailto:" + CONFIG.enquiryEmail
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+
+      if (sentMessage) sentMessage.classList.add("visible");
+      form.reset();
+      chips.forEach(function (chip) { chip.classList.remove("active"); });
+      picked = [];
+      syncInterests();
     });
   }
 
