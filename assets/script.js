@@ -50,6 +50,28 @@
     if (next) next.addEventListener("click", function () { scrollRail(1); });
   }
 
+  // ---------- Mobile nav ----------
+
+  function initMobileNav() {
+    var toggle = document.querySelector(".nav-toggle");
+    var menu = document.querySelector(".mobile-menu");
+    if (!toggle || !menu) return;
+
+    function setOpen(open) {
+      toggle.classList.toggle("open", open);
+      menu.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(!menu.classList.contains("open"));
+    });
+
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { setOpen(false); });
+    });
+  }
+
   // ---------- Contact form ----------
 
   function initContactForm() {
@@ -95,6 +117,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     initFocus();
     initRail();
+    initMobileNav();
     initContactForm();
   });
 })();
