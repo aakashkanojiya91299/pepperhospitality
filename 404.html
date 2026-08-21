@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found — Pepper Hospitality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .notfound {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+  .notfound .eyebrow { margin-bottom: 18px; }
+  .notfound h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(64px, 14vw, 140px);
+    line-height: 1;
+    margin: 0;
+    color: var(--text);
+  }
+  .notfound p.lead {
+    max-width: 480px;
+    margin: 20px 0 32px;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .notfound .btn-home {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .notfound .btn-home:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+</style>
+</head>
+<body>
+
+<main class="notfound">
+  <p class="eyebrow">Pepper Hospitality</p>
+  <h1>404</h1>
+  <p class="lead">The page you're looking for doesn't exist or may have moved. Let's get you back on track.</p>
+  <a href="/" class="btn-home">Back to home</a>
+</main>
+
+</body>
+</html>
